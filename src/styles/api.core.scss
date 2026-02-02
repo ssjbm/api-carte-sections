@@ -1,7 +1,9 @@
 :root {
 	--cs-width: 100%;
+	--cs-aspect-ratio: 4/3;
+	--cs-color-hl: #537ea8;
+	--cs-color-even: #537ea859;
 }
-
 
 
 .carte-sections {
@@ -9,9 +11,9 @@
 	display: flex;
 	flex-direction: column;
 	width: var(--cs-width);
-	background-color: red;
 
 	&__header {
+		$self: &;
 		line-height: 2em;
 		white-space: nowrap;
 
@@ -20,6 +22,11 @@
 			text-align: center;
             text-transform: uppercase;
 			width: 5em;
+			border: 1px solid black;
+
+			&:focus {
+				border-width: 2px;
+			}
 
             &::placeholder {
                 opacity: 0.4;
@@ -36,24 +43,24 @@
 			}
 		}
 
-		&__validmark {
-			margin-left: 0.25em;
+		&__validmark::before {
+			margin: 0 0.25em;
 		}
 
 		&:has(&__postalcode:placeholder-shown) {
-			.carte-sections__header__validmark {
+			#{$self}__validmark {
 				display: none;
 			}
 		}
 
 		&:has(&__postalcode:valid) {
-			.carte-sections__header__validmark::before {
+			#{$self}__validmark::before {
 				content: "✅";
 			}
 		}
 
 		&:has(&__postalcode:invalid) {
-			.carte-sections__header__validmark::before {
+			#{$self}__validmark::before {
 				content: "❌";
 			}
 		}
@@ -61,6 +68,66 @@
 
 	}
 
+	&__map {
+		position: relative;
+		margin-top: 0.5em;
+		aspect-ratio: var(--cs-aspect-ratio);
+
+		.toolbar-section-name {
+			background-color: var(--cs-color-hl);
+			margin-top: 0.6em;
+			margin-left: 0.6em;
+			font-size: 1.9em;
+			font-weight: bold;
+			padding: 0.3em 0.5em;
+			box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.35);
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			max-width: calc(100% - 70px);
+			user-select: none;
+			display: none;
+			-webkit-appearance: none;
+			appearance: none;
+
+			@media (max-width: 576px)  {
+				visibility: hidden;
+			}
+		}
+	}
+
+	&__infos {
+		margin-top: 1.5em;
+		font-size: 0.9em;
+
+		table {
+			th, td {
+				padding: 0.2em;
+			}
+
+			th {
+				text-align: left;
+				font-size: 1.3em;
+				background-color: var(--cs-color-hl);
+			}
+			
+			tr {
+
+				&:nth-child(even) td {
+					background-color: var(--cs-color-even);
+				}
+
+				td:first-child {
+					line-height: 1.5em;
+					width: 1%;
+					white-space: nowrap;
+					padding-right: 1em;
+					font-weight: bold;
+					vertical-align: top;
+				}
+			}
+		}
+	}
 
 }
 
