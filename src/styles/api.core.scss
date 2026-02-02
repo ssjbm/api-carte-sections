@@ -1,0 +1,71 @@
+:root {
+	--cs-width: 100%;
+}
+
+
+
+.carte-sections {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: var(--cs-width);
+	background-color: red;
+
+	&__header {
+		line-height: 2em;
+		white-space: nowrap;
+
+		&__postalcode {
+			font-size: 1em !important;
+			text-align: center;
+            text-transform: uppercase;
+			width: 5em;
+
+            &::placeholder {
+                opacity: 0.4;
+            }
+
+			&.shake {
+				filter: blur(0.01rem);
+				animation-name: cs-shake;
+				animation-duration: 50ms;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				transform-origin: center center;
+
+			}
+		}
+
+		&__validmark {
+			margin-left: 0.25em;
+		}
+
+		&:has(&__postalcode:placeholder-shown) {
+			.carte-sections__header__validmark {
+				display: none;
+			}
+		}
+
+		&:has(&__postalcode:valid) {
+			.carte-sections__header__validmark::before {
+				content: "✅";
+			}
+		}
+
+		&:has(&__postalcode:invalid) {
+			.carte-sections__header__validmark::before {
+				content: "❌";
+			}
+		}
+
+
+	}
+
+
+}
+
+
+@keyframes cs-shake {
+    from { transform: translate(-1%, 1%) rotate(-3deg); }
+    to   { transform: translate(1%, -1%) rotate(3deg); }
+}

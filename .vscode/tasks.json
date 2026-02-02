@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build:js",
+			"type": "npm",
+			"script": "buildjs",
+			"presentation": {
+				"panel": "shared",
+				"group": "build",
+				"reveal": "never",
+				"showReuseMessage": false
+			},
+		},
+		{
+			"label": "build:css",
+			"type": "npm",
+			"script": "buildcss",
+			"presentation": {
+				"panel": "shared",
+				"group": "build",
+				"reveal": "never",
+				"showReuseMessage": false
+			}
+		}
+	]
+}

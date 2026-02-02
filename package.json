@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "csso": "^5.0.5",
+    "esbuild": "^0.27.2",
+    "ignore": "^7.0.5",
+    "sass": "^1.97.3"
+  },
+  "scripts": {
+    "export": "node scripts/export.js",
+    "buildjs": "node scripts/buildjs.js",
+    "buildcss": "node scripts/buildcss.js"
+  }
+}
