@@ -85,6 +85,8 @@ import './libraries/helpers';
 		this.map = new Map(this.csmap, {
             streetViewControl: false,
             mapTypeControl: false,
+            zoomControl: false,
+            cameraControl: false,
             disableDoubleClickZoom: true,
 			colorScheme: ColorScheme.LIGHT,
 			styles: [

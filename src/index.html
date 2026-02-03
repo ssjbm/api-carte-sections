@@ -15,6 +15,15 @@
 			--color-bg: #faebd7;
 			--color-fg: #030221;
 			--color-hl: #537ea8;
+
+			--font-base:  28;
+			--font-break: 1024;
+			--font-resp:  calc(var(--font-base) * 100 / var(--font-break));
+
+			--font-size-base:  calc(var(--font-base) * 1px);
+			--font-size-break: calc(var(--font-break) * 1px);
+			--font-size-resp:  calc(var(--font-resp) * 1vw);
+			--font-size:       min(var(--font-size-resp), var(--font-size-base));
 		}
 
 		* {
@@ -26,20 +35,20 @@
 
 		html {
 			scroll-behavior: smooth;
-			font-size: 20px;
+			font-size: var(--font-size);
 		}
 
 		body {
 			position: relative;
 			overflow-x: hidden;
 			display: flex;
+			flex-direction: column;
 			min-height: 100dvh;
 			max-width: 100%;
 			background-color: var(--color-bg);
 			color: var(--color-fg);
 			justify-content: center;
-			align-items: flex-start;
-			padding: 4em 0;
+			align-items: center;
 		}
 
 		body::before {
@@ -49,7 +58,19 @@
 			left: 0;
 			width: 100vw;
 			height: 100vh;
+			overflow-x: hidden;
+			z-index: -1;
 			background-image: linear-gradient(var(--color-hl), var(--color-bg));
+		}
+
+		main {
+			width: 100%;
+			max-width: var(--font-size-break);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 3em 2em;
+			flex: 1;
 		}
 
 		
@@ -58,10 +79,10 @@
 		.carte-sections {
 
 			/* Largeur de la carte */
-			--cs-width: 800px; /* Default: 100% */
+			--cs-width: 100%; /* Valeur par default */
 
 			/* Ratio largeur/hauteur de la carte */
-			--cs-aspect-ratio: 4/3; /* Valeur par défaut */
+			--cs-aspect-ratio: 4/3; /* Valeur par default */
 			
 			/* Couleur des highlights */
 			--cs-color-highlight: #537ea8; /* Valeur par défaut */
@@ -74,7 +95,9 @@
 	</style>
 </head>
 <body>
-	<!-- Balise de la carte de sections -->
-	<carte-sections></carte-sections>
+	<main>
+		<!-- Balise de la carte de sections -->
+		<carte-sections></carte-sections>
+	</main>
 </body>
 </html>
