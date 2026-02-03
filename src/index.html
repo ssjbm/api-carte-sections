@@ -14,7 +14,8 @@
 		:root {
 			--color-bg: #faebd7;
 			--color-fg: #030221;
-			--color-hl: #537ea8;
+			--color-hl: #537ea8c2;
+			--color-ev: #537ea859;
 
 			--font-base:  28;
 			--font-break: 1024;
@@ -34,7 +35,6 @@
 		}
 
 		html {
-			scroll-behavior: smooth;
 			font-size: var(--font-size);
 		}
 
@@ -82,13 +82,13 @@
 			--cs-width: 100%; /* Valeur par default */
 
 			/* Ratio largeur/hauteur de la carte */
-			--cs-aspect-ratio: 4/3; /* Valeur par default */
+			--cs-aspect-ratio: 16/10; /* Defaut: 4/3 */
 			
 			/* Couleur des highlights */
-			--cs-color-highlight: #537ea8; /* Valeur par défaut */
+			--cs-color-highlight: var(--color-hl); /* Valeur par défaut */
 			
 			/* Couleur de ligne paire */
-			--cs-color-even: #537ea859; /* Valeur par défaut */
+			--cs-color-even: var(--color-ev); /* Valeur par défaut */
 
 		}
 
