@@ -1,8 +1,10 @@
+// --> Include libraries
 const fs = require('fs');
-const fscore = require('fs');
 const path = require('path');
 const esbuild = require('esbuild');
 
+
+// --> Define paths
 const ROOT = path.resolve(__dirname, "../");
 const SRC = path.join(ROOT, 'src/');
 const DIST = path.join(ROOT, 'dist/');
@@ -14,6 +16,8 @@ const SRCIDX = path.join(SRC, 'index.html');
 const OUTJS = path.join(DIST, 'api.core.min.js');
 const OUTIDX = path.join(DIST, 'index.html');
 
+
+// --> Format de date en français
 function formatFrDate(dateInput = new Date(), timeZone = 'America/Toronto') {
 	const d = (dateInput instanceof Date) ? dateInput : new Date(dateInput);
 	const fmt = new Intl.DateTimeFormat('fr-CA', {
@@ -65,9 +69,9 @@ const bundleContent = templateContent
 fs.writeFileSync(OUTIDX, "<!--\n\n" + bannerContent + "\n\n\-->\n" + idxContent, "utf8");
 
 
-// --> Build final plugin
+// --> Build final API
 esbuild.build({
-    stdin: { contents: bundleContent },
+    stdin: { contents: bundleContent.trim() },
     banner: { js: "/*!\n\n" + bannerContent + "\n\n*/" },
     outfile: OUTJS,
     legalComments: "none",

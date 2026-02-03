@@ -4,9 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/styles/api.core.min.css">
+	<!-- IMPORTANT: Chemin du script complet -->
 	<script src="/scripts/api.core.min.js"></script>
 	<title>API Cartes de sections</title>
 	<style>
+
+		/* Styles de base */
+
 		:root {
 			--color-bg: #faebd7;
 			--color-fg: #030221;
@@ -48,12 +52,29 @@
 			background-image: linear-gradient(var(--color-hl), var(--color-bg));
 		}
 
+		
+		/* Configuration de l'API */
+
 		.carte-sections {
-			--cs-width: 800px;
+
+			/* Largeur de la carte */
+			--cs-width: 800px; /* Default: 100% */
+
+			/* Ratio largeur/hauteur de la carte */
+			--cs-aspect-ratio: 4/3; /* Valeur par défaut */
+			
+			/* Couleur des highlights */
+			--cs-color-highlight: #537ea8; /* Valeur par défaut */
+			
+			/* Couleur de ligne impaire */
+			--cs-color-even: #537ea859; /* Valeur par défaut */
+
 		}
+
 	</style>
 </head>
 <body>
+	<!-- Tag de la carte de sections -->
 	<carte-sections></carte-sections>
 </body>
 </html>

@@ -1,13 +1,13 @@
-# mei.quebec
-Mouvement Étudiant Indépendantiste \
-https://mei.quebec
+# API Carte des sections
+Exemple d'utilisation le plus simple. \
+https://docs.ssjb.com/api-carte-sections/
 
 
 ## Installation
 
 ```bash
-git clone https://github.com/meiquebec/meiquebec.github.io.git
-cd meiquebec.github.io
+git clone https://github.com/ssjbm/api-carte-sections.git
+cd api-carte-sections
 npm install
 code .
 ```
@@ -18,9 +18,8 @@ code .
 
 
 ## À propos
-Le Mouvement Étudiant Indépendantiste (MÉI) est une organisation parapluie regroupant plus d’une vingtaine de comités souverainistes dans les cégeps et universités à travers le tout Québec. L’organisation mobilise et représente tous les étudiants en vu de construire un Québec pays.
-Le code est ouvert (open source) afin de favoriser la transparence, la réutilisation et les contributions de la communauté.
+La carte interactive des sections de la Société Saint-Jean-Baptiste de Montréal.
 
 - Contribuer : propose des idées et correctifs via Issues et Pull Requests.
 - Licence : voir le fichier [LICENSE](LICENSE).
-- Contact : ouvre une Issue ou [écris-nous ✉](mailto:mouvement.ei@gmail.com).
+- Contact : ouvre une Issue ou [écris-nous ✉](mailto:mlarriveeroy@gmail.com).
