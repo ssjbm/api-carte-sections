@@ -34,7 +34,7 @@ function formatFrDate(dateInput = new Date(), timeZone = 'America/Toronto') {
 
 // --> Load Index
 const idxContent = fs.readFileSync(SRCIDX, 'utf8')
-	.replace(/<script src="\/scripts\//i, '<script src="./')
+	.replace(/<script src="\/scripts\//i, '<script src="https://docs.ssjb.com/api-carte-sections/')
 	.replace(/\r?\n\t<link rel="stylesheet".*?css">/mig, '');
 
 
