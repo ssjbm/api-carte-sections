@@ -101,7 +101,7 @@ import './libraries/helpers';
 				{ featureType: "poi.business", stylers: [{ visibility: "off" }] }
 			],
         });
-        this.toolbar = create('div', 'toolbar-section-name');
+        this.toolbar = create('div', 'carte-sections__map__toolbar');
         this.map.controls[ControlPosition.TOP_LEFT].push(this.toolbar);
 
         this.layer = new Data({ map: this.map });

@@ -1,7 +1,7 @@
 :root {
 	--cs-width: 100%;
 	--cs-aspect-ratio: 4/3;
-	--cs-color-hl: #537ea8;
+	--cs-color-highlight: #537ea8;
 	--cs-color-even: #537ea859;
 }
 
@@ -72,12 +72,13 @@
 		position: relative;
 		margin-top: 0.5em;
 		aspect-ratio: var(--cs-aspect-ratio);
+		box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.35);
 
-		.toolbar-section-name {
-			background-color: var(--cs-color-hl);
+		&__toolbar {
+			background-color: var(--cs-color-highlight);
 			margin-top: 0.6em;
 			margin-left: 0.6em;
-			font-size: 1.9em;
+			font-size: 1.1rem;
 			font-weight: bold;
 			padding: 0.3em 0.5em;
 			box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.35);
@@ -108,11 +109,10 @@
 			th {
 				text-align: left;
 				font-size: 1.3em;
-				background-color: var(--cs-color-hl);
+				background-color: var(--cs-color-highlight);
 			}
 			
 			tr {
-
 				&:nth-child(even) td {
 					background-color: var(--cs-color-even);
 				}
