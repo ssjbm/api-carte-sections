@@ -19,11 +19,10 @@
 
 			--font-base:  28;
 			--font-break: 1024;
-			--font-resp:  calc(var(--font-base) * 100 / var(--font-break));
 
 			--font-size-base:  calc(var(--font-base) * 1px);
 			--font-size-break: calc(var(--font-break) * 1px);
-			--font-size-resp:  calc(var(--font-resp) * 1vw);
+			--font-size-resp:  calc(var(--font-base) * 100 / var(--font-break) * 1vw);
 			--font-size:       min(var(--font-size-resp), var(--font-size-base));
 		}
 
