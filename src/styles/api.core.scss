@@ -3,6 +3,7 @@
 	--cs-aspect-ratio: 4/3;
 	--cs-color-highlight: #336699;
 	--cs-color-even: #3366999d;
+	--cs-shadow: none; 
 }
 
 
@@ -70,7 +71,7 @@
 		position: relative;
 		margin-top: 0.5em;
 		aspect-ratio: var(--cs-aspect-ratio);
-		box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.35);
+		box-shadow: var(--cs-shadow);
 
 		&__toolbar {
 			background-color: var(--cs-color-highlight);
@@ -88,6 +89,7 @@
 			display: none;
 			-webkit-appearance: none;
 			appearance: none;
+			// color: white;
 			// opacity: 0.9;
 
 			// @media (max-width: 576px)  {
