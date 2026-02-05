@@ -2,26 +2,38 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "build:js",
+			"label": "build:watchjs",
 			"type": "npm",
-			"script": "buildjs",
+			"script": "watchjs",
+			"isBackground": true,
+			"runOptions": {
+				"runOn": "folderOpen",
+				"instanceLimit": 1
+			},
 			"presentation": {
 				"panel": "shared",
-				"group": "build",
+				"group": "build-watch",
 				"reveal": "never",
 				"showReuseMessage": false
 			},
+			"problemMatcher": []
 		},
 		{
-			"label": "build:css",
+			"label": "build:watchscss",
 			"type": "npm",
-			"script": "buildcss",
+			"script": "watchscss",
+			"isBackground": true,
+			"runOptions": {
+				"runOn": "folderOpen",
+				"instanceLimit": 1
+			},
 			"presentation": {
 				"panel": "shared",
-				"group": "build",
+				"group": "build-watch",
 				"reveal": "never",
 				"showReuseMessage": false
-			}
+			},
+			"problemMatcher": []
 		}
 	]
 }
