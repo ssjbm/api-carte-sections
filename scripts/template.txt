@@ -1,4 +1,4 @@
-(() => {
+(async () => {
     const sheetCS = new CSSStyleSheet();
     sheetCS.replaceSync(`###CSSCONTENT###`);
     document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheetCS];

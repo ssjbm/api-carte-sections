@@ -2,9 +2,9 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "build:watchjs",
-			"type": "npm",
-			"script": "watchjs",
+			"label": "build:watch",
+			"type": "shell",
+			"command": "node ./scripts/watch.js",
 			"isBackground": true,
 			"runOptions": {
 				"runOn": "folderOpen",
@@ -13,24 +13,7 @@
 			"presentation": {
 				"panel": "shared",
 				"group": "build-watch",
-				"reveal": "never",
-				"showReuseMessage": false
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "build:watchscss",
-			"type": "npm",
-			"script": "watchscss",
-			"isBackground": true,
-			"runOptions": {
-				"runOn": "folderOpen",
-				"instanceLimit": 1
-			},
-			"presentation": {
-				"panel": "shared",
-				"group": "build-watch",
-				"reveal": "never",
+				"reveal": "always",
 				"showReuseMessage": false
 			},
 			"problemMatcher": []
