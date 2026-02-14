@@ -1,4 +1,6 @@
 import './libraries/helpers';
+import './libraries/secrets';
+
 
 (window.CarteSections = {
 
@@ -24,9 +26,9 @@ import './libraries/helpers';
 
 	init: async function() {
 		await Promise.all([
+            this.initScrets(),
 			documentReady(() => this.initContainer()),
 			loadJsonProperties(this, {
-				secrets:  `${this.root}secrets.json`,
 				sections: `${this.root}assets/maps/sections.json`,
 				palettes: `${this.root}assets/maps/palettes.json`
 			})
@@ -42,6 +44,11 @@ import './libraries/helpers';
             v:         'weekly',
         }, true);
 	},
+
+
+    initScrets: async function() {
+        this.secrets = await SECRETS;
+    },
 
 
 	initContainer: function() {
