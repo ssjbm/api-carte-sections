@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "chokibasic": "^1.0.11",
-    "pako": "^2.1.0"
+    "chokibasic": "^1.0.11"
   },
   "scripts": {
     "export": "node scripts/export.js",
