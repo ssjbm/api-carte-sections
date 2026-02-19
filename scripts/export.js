@@ -61,7 +61,7 @@ const cssContent = fs.readFileSync(SRCCSS, 'utf8');
 
 // --> Bundle API
 const bundleContent = templateContent
-    .replace(/###CSSCONTENT###/i, cssContent)
+    .replace(/###CSSCONTENT###/i, () => cssContent)
     .replace(/###JSCONTENT###/i, () => jsContent);
 
 
