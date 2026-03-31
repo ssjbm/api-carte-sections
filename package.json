@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "chokibasic": "^1.1.8"
+    "chokibasic": "^1.1.9"
   },
   "scripts": {
     "export": "node scripts/export.js",
