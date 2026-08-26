@@ -73,6 +73,22 @@
 		aspect-ratio: var(--cs-aspect-ratio);
 		box-shadow: var(--cs-shadow);
 
+		&__credit {
+			font-size: 0.9em;
+			background-color: var(--cs-color-highlight);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 1.8em;
+			padding: 0 0.5em;
+			font-weight: 700;
+
+			& > a {
+				color: black;
+			}
+		}
+
+
 		&__toolbar {
 			background-color: var(--cs-color-highlight);
 			margin-top: 0.6em;

@@ -113,6 +113,9 @@ import './libraries/secrets';
         this.toolbar = create('div', 'carte-sections__map__toolbar');
         this.map.controls[ControlPosition.TOP_LEFT].push(this.toolbar);
 
+        this.credit = create('div', 'carte-sections__map__credit', 'Créé par: <a href="mailto:mlarriveeroy@gmail.com">Maxime Larrivée-Roy 📧</a>');
+        this.map.controls[ControlPosition.RIGHT_BOTTOM].push(this.credit);
+
         this.layer = new Data({ map: this.map });
         this.layer.loadGeoJson(`${this.root}assets/maps/sections.geojson`, null, async (features) => {
             this.layer.addListener('click', e => this.setFocus(e.feature.getProperty('id')));
